@@ -1,0 +1,141 @@
+h1{
+    font-family: Oswald;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 71.14px;
+    color: #000000;
+    margin: 0;
+}
+
+h2{
+    font-size: 30px;
+    font-weight: 600;
+    font-family: Oswald;
+    color: #FFFFFF;
+    line-height: 35.57px;
+    margin: 0px 0px 27px 25px;
+    padding-top: 20px;
+}
+
+h3{
+    font-size: 45px;
+    font-weight: 100;
+    font-family: Oswald;
+    color: #FFFFFF;
+    line-height: 59.28px;
+}
+
+p{
+    font-family: Oswald;
+    font-size: 28px;
+    font-weight: 200;
+    line-height: 41.5px;
+    width: 95%;
+    margin-bottom: 0;
+}
+
+.page-container{
+    display: flex;
+    justify-content: center;
+}
+
+.page-size{
+    width: 80%;
+}
+
+.banner-section{
+    padding: 0px 12px;
+}
+
+.banner-color{
+    background-color: #61787F;
+}
+
+.image-banner{
+    width: 150px;
+}
+
+.best-movie-card {
+    border: 6px solid #000000;
+    border-radius: 0px
+}
+
+.image-best-movie{
+    width: 257px;
+}
+
+.best-movie-details-button{
+    width: 26.5%;
+    height: 70px;
+    color: white;
+    background-color: #FA0B0B;
+    border: none;       
+    border-radius: 25px; 
+    cursor: pointer;
+    font-family: Oswald;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 35.57px;
+    text-align: center;
+}
+
+.categorie-movies-section-card {
+    border-radius: 0px;
+    border: none;
+}
+
+.categorie-movies-details{
+    background-color: rgb(0, 0, 0, 0.5);
+}
+
+.categorie-movies-details-button{
+    width: 29%;
+    color: white;
+    background-color: #2D2C2C;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-family: Oswald;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 24.57px;
+    text-align: center;
+}
+
+.search-dropdown-autres{
+    border-radius: 0px;
+    border: #000000 solid 1px;
+    width: 250px;
+    text-align: left;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: Oswald;
+}
+
+.search-button-autres:hover{
+    border-radius: 0px;
+    border: #000000 solid 1px;
+}
+
+.dropdown-toggle::after{
+    display: none;
+}
+
+.dropdown-ul {
+    width: 250px;
+    border-radius: 0px;
+}
+
+.dropdown-li {
+    border: #000000 solid 1px;
+}
+
+.dropdown-li a{
+    text-align: left;
+}
+
+.dropdown-item{
+    font-weight: 600;
+    font-size: 20px;
+    font-family: Oswald;
+}
