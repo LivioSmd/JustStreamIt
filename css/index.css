@@ -102,6 +102,11 @@ p{
     text-align: center;
 }
 
+.movie-image{
+    height: 340px;
+    object-fit: cover;
+}
+
 .search-dropdown-autres{
     border-radius: 0px;
     border: #000000 solid 1px;
