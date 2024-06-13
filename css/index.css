@@ -25,6 +25,20 @@ h3{
     line-height: 59.28px;
 }
 
+h4{
+    font-size: 24px;
+    font-weight: 600;
+    font-family: Oswald;
+    color: black;
+}
+
+h5{
+    font-size: 26px;
+    font-weight: 400;
+    font-family: Oswald;
+    color: black;
+}
+
 p{
     font-family: Oswald;
     font-size: 28px;
@@ -122,6 +136,11 @@ p{
     border: #000000 solid 1px;
 }
 
+.dropdown-toggle:hover{
+    border-radius: 0px;
+    border: #000000 solid 1px;
+}
+
 .dropdown-toggle::after{
     display: none;
 }
@@ -143,4 +162,42 @@ p{
     font-weight: 600;
     font-size: 20px;
     font-family: Oswald;
+}
+
+.modal-autor-title{
+    font-size: 24px;
+    font-weight: 300;
+    font-family: Oswald;
+    color: black;
+}
+
+.modal-autor-text{
+    font-family: Oswald;
+    font-size: 22px;
+    font-weight: 200;
+    line-height: 35px;
+    width: 95%;
+}
+
+.modal-content {
+    border-radius: 0px;
+    border: 6px solid #000000;
+}
+
+.button-close-modal{
+    width: 26%;
+    color: white;
+    background-color: #FA0B0B;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-family: Oswald;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 24.57px;
+    text-align: center;
+}
+
+.button-close-modal:hover{
+    background-color: #FA0B0B;
 }
