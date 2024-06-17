@@ -20,31 +20,31 @@
                     <div class="row justify-content-between">
                         <div class="col">
                             <div class="col">
-                                <h1 class="mb-2 mt-4">The Big Lebowski</h1>
+                                <h1 class="mb-2 mt-4" id="modal-title"></h1>
                             </div>
                             <div class="col">
-                                <h4 class="my-2">1998 - Comedy, Crime, Sport</h4>
+                                <h4 class="my-2" id="modal-year-genres"></h4>
                             </div>
                             <div class="col">
-                                <h4 class="my-2">PG-13 - 117 minutes (USA / UK)</h4>
+                                <h4 class="my-2" id="modal-pg-time-contries"></h4>
                             </div>
                             <div class="col">
-                                <h4 class="mt-2 mb-5">IMDB score: 8.1/10</h4>
+                                <h4 class="mt-2 mb-5" id="modal-imdb"></h4>
                             </div>
                             <div class="col">
                                 <h5 class="mb-2 mt-5">Réalisé par: </h5>
                             </div>
                             <div class="col">
-                                <p class="my-2">Joel Cohen, Ethan Cohen</p>
+                                <p class="my-2" id="modal-directors"></p>
                             </div>
                         </div>
                         <div class="col-auto">
-                            <img src="" class="img-fluid rounded-start my-3 mx-4 image-best-movie" alt="modal-movie" id="modal-movie">
+                            <img src="" class="img-fluid rounded-start my-3 mx-4 image-best-movie" alt="modal-movie" id="modal-img">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col">
-                            <p class="mt-3 mb-5">When "the dude" Lebowski is mistaken for a millionaire Lebowski, two thugs urinate on his rug to coerce him into paying a debt he knows nothing about. While attempting to gain recompense for the ruined rug from his wealthy counterpart, he accepts a one-time job with high pay-off. He enlists the help of his bowling buddy, Walter, a gun-toting Jewish-convert with anger issues. Deception leads to more trouble, and it soon seems that everyone from porn empire tycoons to nihilists want something from The Dude.</p>
+                            <p class="mt-3 mb-5" id="modal-description"></p>
                         </div>
                     </div>
                     <div class="row">
@@ -54,7 +54,7 @@
                     </div>
                     <div class="row">
                         <div class="col">
-                            <p class="modal-autor-text mb-5">David Huddleston, Flea, Jack Kehler, Jeff Bridges, Jimmie Dale Gilmore, John Goodman, John Turturro, Julianne Moore, Mark Pellegrino, Peter Stormare, Philip Moon, Philip Seymour Hoffman, Steve Buscemi, Tara Reid, Torsten Voges</p>
+                            <p class="modal-autor-text mb-5" id="modal-actors">David Huddleston, Flea, Jack Kehler, Jeff Bridges, Jimmie Dale Gilmore, John Goodman, John Turturro, Julianne Moore, Mark Pellegrino, Peter Stormare, Philip Moon, Philip Seymour Hoffman, Steve Buscemi, Tara Reid, Torsten Voges</p>
                         </div>
                     </div>
                     <div class="row justify-content-center">
@@ -86,7 +86,7 @@
                             <div class="card mb-3 best-movie-card">
                                 <div class="row g-0">
                                     <div class="col-md-4">
-                                        <img src="" class="img-fluid rounded-start my-3 mx-4 image-best-movie" alt="best-movie-picture" id="best-movie-img">
+                                        <img src="" class="img-fluid rounded-start my-3 mx-4 image-best-movie btn-modal" alt="best-movie-picture" id="best-movie-img">
                                     </div>
                                     <div class="col-md-8">
                                         <div class="card-body">
@@ -94,7 +94,7 @@
                                             <p class="card-text my-5" id="best-movie-description"></p>
                                             <div class="row">
                                                 <div class="col text-lg-end">
-                                                    <button class="best-movie-details-button me-5 mb-3" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Détails</button>
+                                                    <button class="best-movie-details-button me-5 mb-3 btn-modal" id='btn-best-movie' type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Détails</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -121,7 +121,7 @@
                                                 <div class="categorie-movies-details mt-5">
                                                     <h2 id="movie-title-1"></h2>
                                                     <div class="col text-lg-end">
-                                                        <button class="categorie-movies-details-button mb-3 me-3">Details</button>
+                                                        <button class="categorie-movies-details-button mb-3 me-3 btn-modal btn-1" id="btn-card-1" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -134,7 +134,7 @@
                                                 <div class="categorie-movies-details mt-5">
                                                     <h2 id="movie-title-2"></h2>
                                                     <div class="col text-lg-end">
-                                                        <button class="categorie-movies-details-button mb-3 me-3">Details</button>
+                                                        <button class="categorie-movies-details-button mb-3 me-3 btn-modal btn-2" id="btn-card-2" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -147,7 +147,7 @@
                                                 <div class="categorie-movies-details mt-5">
                                                     <h2 id="movie-title-3"></h2>
                                                     <div class="col text-lg-end">
-                                                        <button class="categorie-movies-details-button mb-3 me-3">Details</button>
+                                                        <button class="categorie-movies-details-button mb-3 me-3 btn-modal btn-3" id="btn-card-3" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -162,7 +162,7 @@
                                                 <div class="categorie-movies-details mt-5">
                                                     <h2 id="movie-title-4"></h2>
                                                     <div class="col text-lg-end">
-                                                        <button class="categorie-movies-details-button mb-3 me-3">Details</button>
+                                                        <button class="categorie-movies-details-button mb-3 me-3 btn-modal btn-4" id="btn-card-4" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -175,7 +175,7 @@
                                                 <div class="categorie-movies-details mt-5">
                                                     <h2 id="movie-title-5"></h2>
                                                     <div class="col text-lg-end">
-                                                        <button class="categorie-movies-details-button mb-3 me-3">Details</button>
+                                                        <button class="categorie-movies-details-button mb-3 me-3 btn-modal btn-5" id="btn-card-5" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -188,7 +188,7 @@
                                                 <div class="categorie-movies-details mt-5">
                                                     <h2 id="movie-title-6"></h2>
                                                     <div class="col text-lg-end">
-                                                        <button class="categorie-movies-details-button mb-3 me-3">Details</button>
+                                                        <button class="categorie-movies-details-button mb-3 me-3 btn-modal btn-6" id="btn-card-6" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -216,7 +216,7 @@
                                                 <div class="categorie-movies-details mt-5">
                                                     <h2 id="movie-title-7"></h2>
                                                     <div class="col text-lg-end">
-                                                        <button class="categorie-movies-details-button mb-3 me-3">Details</button>
+                                                        <button class="categorie-movies-details-button mb-3 me-3 btn-modal btn-7" id="btn-card-7" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -229,7 +229,7 @@
                                                 <div class="categorie-movies-details mt-5">
                                                     <h2 id="movie-title-8"></h2>
                                                     <div class="col text-lg-end">
-                                                        <button class="categorie-movies-details-button mb-3 me-3">Details</button>
+                                                        <button class="categorie-movies-details-button mb-3 me-3 btn-modal btn-8" id="btn-card-8" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -242,7 +242,7 @@
                                                 <div class="categorie-movies-details mt-5">
                                                     <h2 id="movie-title-9"></h2>
                                                     <div class="col text-lg-end">
-                                                        <button class="categorie-movies-details-button mb-3 me-3">Details</button>
+                                                        <button class="categorie-movies-details-button mb-3 me-3 btn-modal btn-9" id="btn-card-9" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -257,7 +257,7 @@
                                                 <div class="categorie-movies-details mt-5">
                                                     <h2 id="movie-title-10"></h2>
                                                     <div class="col text-lg-end">
-                                                        <button class="categorie-movies-details-button mb-3 me-3">Details</button>
+                                                        <button class="categorie-movies-details-button mb-3 me-3 btn-modal btn-10" id="btn-card-10" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -270,7 +270,7 @@
                                                 <div class="categorie-movies-details mt-11">
                                                     <h2 id="movie-title-5"></h2>
                                                     <div class="col text-lg-end">
-                                                        <button class="categorie-movies-details-button mb-3 me-3">Details</button>
+                                                        <button class="categorie-movies-details-button mb-3 me-3 btn-modal btn-11"  id="btn-card-11" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -283,7 +283,7 @@
                                                 <div class="categorie-movies-details mt-5">
                                                     <h2 id="movie-title-12"></h2>
                                                     <div class="col text-lg-end">
-                                                        <button class="categorie-movies-details-button mb-3 me-3">Details</button>
+                                                        <button class="categorie-movies-details-button mb-3 me-3 btn-modal btn-12" id="btn-card-12" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -311,7 +311,7 @@
                                                 <div class="categorie-movies-details mt-5">
                                                     <h2 id="movie-title-13"></h2>
                                                     <div class="col text-lg-end">
-                                                        <button class="categorie-movies-details-button mb-3 me-3">Details</button>
+                                                        <button class="categorie-movies-details-button mb-3 me-3 btn-modal btn-13" id="btn-card-13" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -324,7 +324,7 @@
                                                 <div class="categorie-movies-details mt-5">
                                                     <h2 id="movie-title-14"></h2>
                                                     <div class="col text-lg-end">
-                                                        <button class="categorie-movies-details-button mb-3 me-3">Details</button>
+                                                        <button class="categorie-movies-details-button mb-3 me-3 btn-modal btn-14" id="btn-card-14" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -337,7 +337,7 @@
                                                 <div class="categorie-movies-details mt-5">
                                                     <h2 id="movie-title-15"></h2>
                                                     <div class="col text-lg-end">
-                                                        <button class="categorie-movies-details-button mb-3 me-3">Details</button>
+                                                        <button class="categorie-movies-details-button mb-3 me-3 btn-modal btn-15" id="btn-card-15" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -352,7 +352,7 @@
                                                 <div class="categorie-movies-details mt-5">
                                                     <h2 id="movie-title-16"></h2>
                                                     <div class="col text-lg-end">
-                                                        <button class="categorie-movies-details-button mb-3 me-3">Details</button>
+                                                        <button class="categorie-movies-details-button mb-3 me-3 btn-modal btn-16" id="btn-card-16" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -365,7 +365,7 @@
                                                 <div class="categorie-movies-details mt-5">
                                                     <h2 id="movie-title-17"></h2>
                                                     <div class="col text-lg-end">
-                                                        <button class="categorie-movies-details-button mb-3 me-3">Details</button>
+                                                        <button class="categorie-movies-details-button mb-3 me-3 btn-modal btn-17" id="btn-card-17" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -378,7 +378,7 @@
                                                 <div class="categorie-movies-details mt-5">
                                                     <h2 id="movie-title-18"></h2>
                                                     <div class="col text-lg-end">
-                                                        <button class="categorie-movies-details-button mb-3 me-3">Details</button>
+                                                        <button class="categorie-movies-details-button mb-3 me-3 btn-modal btn-18" id="btn-card-18" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -430,7 +430,7 @@
                                                 <div class="categorie-movies-details mt-5">
                                                     <h2 id="movie-title-19"></h2>
                                                     <div class="col text-lg-end">
-                                                        <button class="categorie-movies-details-button mb-3 me-3">Details</button>
+                                                        <button class="categorie-movies-details-button mb-3 me-3 btn-modal btn-19" id="btn-card-19" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -443,7 +443,7 @@
                                                 <div class="categorie-movies-details mt-5">
                                                     <h2 id="movie-title-20"></h2>
                                                     <div class="col text-lg-end">
-                                                        <button class="categorie-movies-details-button mb-3 me-3">Details</button>
+                                                        <button class="categorie-movies-details-button mb-3 me-3 btn-modal btn-20" id="btn-card-20" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -456,7 +456,7 @@
                                                 <div class="categorie-movies-details mt-5">
                                                     <h2 id="movie-title-21"></h2>
                                                     <div class="col text-lg-end">
-                                                        <button class="categorie-movies-details-button mb-3 me-3">Details</button>
+                                                        <button class="categorie-movies-details-button mb-3 me-3 btn-modal btn-21" id="btn-card-21" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -471,7 +471,7 @@
                                                 <div class="categorie-movies-details mt-5">
                                                     <h2 id="movie-title-22"></h2>
                                                     <div class="col text-lg-end">
-                                                        <button class="categorie-movies-details-button mb-3 me-3">Details</button>
+                                                        <button class="categorie-movies-details-button mb-3 me-3 btn-modal btn-22" id="btn-card-22" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -484,7 +484,7 @@
                                                 <div class="categorie-movies-details mt-5">
                                                     <h2 id="movie-title-23"></h2>
                                                     <div class="col text-lg-end">
-                                                        <button class="categorie-movies-details-button mb-3 me-3">Details</button>
+                                                        <button class="categorie-movies-details-button mb-3 me-3 btn-modal btn-23" id="btn-card-23" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -497,7 +497,7 @@
                                                 <div class="categorie-movies-details mt-5">
                                                     <h2 id="movie-title-24"></h2>
                                                     <div class="col text-lg-end">
-                                                        <button class="categorie-movies-details-button mb-3 me-3">Details</button>
+                                                        <button class="categorie-movies-details-button mb-3 me-3 btn-modal btn-24" id="btn-card-24" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
                                                     </div>
                                                 </div>
                                             </div>

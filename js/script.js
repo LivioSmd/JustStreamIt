@@ -65,7 +65,6 @@ async function mainMovieResquest (data) {
     
     movieLoop(dataMovies, dataMovies.length)
 
-
     try {
         if (data.next) { // verifie si il y a une next page
             const nextPageData = await movieRequest(data.next);
@@ -85,44 +84,43 @@ async function fetchInMovie(movie, i) {
     console.log("i: ",i);
 
     try {
-        const data = await movieRequest(movie.url);
-        /*
-        if (i === 0) {
+        const data = await movieRequest(movie.url); // modifier la position du if pour reduire le code
+        if (i === 1) {
             const image = data.image_url;
             const title = data.title;
             const description = data.description;
-    
+            const id = data.id;
+
             const bestMovieImage = document.getElementById('best-movie-img');
             const bestMovieTitle = document.getElementById('best-movie-title');
             const bestMovieDescription = document.getElementById('best-movie-description');
-    
+            const btnModal = document.getElementById('btn-best-movie');
+
             bestMovieImage.src = image;
             bestMovieTitle.textContent = title;
             bestMovieDescription.textContent = description;
-        } else {
-            const image = data.image_url;
-            const title = data.title;
-    
-            const bestMovieImage = document.getElementById('best-movie-img-' + i);
-            const bestMovieTitle = document.getElementById('best-movie-title-' + i);
-    
-            bestMovieImage.src = image;
-            bestMovieTitle.textContent = title;
-        }
-        */
+            btnModal.setAttribute('data-id', id);
+        } 
         const image = data.image_url;
         const title = data.title;
+        const id = data.id;
 
         console.log("image:", image)
         console.log("title:", title)
+        console.log("id:", id)
 
         const bestMovieImage = document.getElementById('movie-img-' + i);
         const bestMovieTitle = document.getElementById('movie-title-' + i);
         const cardInfo = document.getElementById('card-info-' + i); 
+        const btnModal = document.getElementById('btn-card-' + i); 
+
+        btnModal.setAttribute('data-id', id);
+        console.log(btnModal)
 
         bestMovieImage.src = image;
         bestMovieTitle.textContent = title;
         cardInfo.style.display = 'flex' // retarblir le display flex pour les cards qui ont été display none
+
     } catch (error) {
         console.log('Erreur :', error);
     }
@@ -176,9 +174,49 @@ async function resquest() {
         const dropdownfirstDisplayData = await movieRequest(setDropdownDefaultValue()); //4
         await mainMovieResquest(dropdownfirstDisplayData);
     } catch (error) {
-        console.log('Erreur :', error);
+        console.log('Erreur request : ', error);
     }
 }
+
+let buttonsModal = document.querySelectorAll('.btn-modal');
+buttonsModal.forEach((btn) => (btn.addEventListener("click", async() => {
+    id = btn.dataset.id
+    console.log(id)
+    const dataModal = await movieRequest(`http://localhost:8000/api/v1/titles/${id}`);
+    console.log(dataModal)
+
+    const image = dataModal.image_url
+    const title = dataModal.title
+    const year = dataModal.year
+    const genres = dataModal.genres
+    let pg = '0'  //demander mentor 
+    const duration = dataModal.duration // en minutes
+    const countries = dataModal.countries
+    const imdb_score = dataModal.imdb_score
+    const directors = dataModal.directors
+    const long_description = dataModal.long_description
+    const actors = dataModal.actors
+
+    const modalImage = document.getElementById('modal-img');
+    const modalTitle = document.getElementById('modal-title');
+    const modalYearGenres = document.getElementById('modal-year-genres');
+    const modalPgTimeCountries = document.getElementById('modal-pg-time-contries');
+    const modalImdb = document.getElementById('modal-imdb');
+    const modalDirectors = document.getElementById('modal-directors');
+    const modaldescription = document.getElementById('modal-description');
+    const modalActors = document.getElementById('modal-actors')
+
+    modalTitle.textContent = title;
+    modalImage.src = image;
+    modalYearGenres.textContent = `${year} - ${genres}`;
+    modalPgTimeCountries.textContent = `PG-${pg} - ${duration} minutes (${countries})`;
+    modalImdb.textContent = `IMDB Score: ${imdb_score}/10`;
+    modalDirectors.textContent = directors;
+    modaldescription.textContent = long_description;
+    modalActors.textContent = actors;
+
+})))
+
 
 resquest();
 setDropdown();
