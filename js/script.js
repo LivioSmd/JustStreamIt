@@ -18,10 +18,10 @@ async function movieRequest(url) {
 
 function resetSource(target, lenght) { // enleve la source des cards qui sont vides
     for (let j = target; (j - 1) % 6!= 0; j++) {
-        const bestMovieImage = document.getElementById('movie-img-' + j);
-        const bestMovieTitle = document.getElementById('movie-title-' + j);
-        bestMovieImage.src = '';
-        bestMovieTitle.textContent = '';
+        const movieImage = document.getElementById('movie-img-' + j);
+        const movieTitle = document.getElementById('movie-title-' + j);
+        movieImage.src = '';
+        movieTitle.textContent = '';
 
         if(lenght < 5) {
             const cardInfo = document.getElementById('card-info-' + j); // pour afficher ou non les cards quand la categorie ne contient pas assez de films
@@ -84,7 +84,7 @@ async function fetchInMovie(movie, i) {
     console.log("i: ",i);
 
     try {
-        const data = await movieRequest(movie.url); // modifier la position du if pour reduire le code
+        const data = await movieRequest(movie.url);
         if (i === 1) {
             const image = data.image_url;
             const title = data.title;
@@ -109,18 +109,18 @@ async function fetchInMovie(movie, i) {
         console.log("title:", title)
         console.log("id:", id)
 
-        const bestMovieImage = document.getElementById('movie-img-' + i);
-        const bestMovieTitle = document.getElementById('movie-title-' + i);
-        const cardInfo = document.getElementById('card-info-' + i); 
+        const movieImage = document.getElementById('movie-img-' + i);
+        const movieTitle = document.getElementById('movie-title-' + i);
         const btnModal = document.getElementById('btn-card-' + i); 
 
         btnModal.setAttribute('data-id', id);
-        console.log(btnModal)
+        movieImage.src = image;
+        movieTitle.textContent = title;
 
-        bestMovieImage.src = image;
-        bestMovieTitle.textContent = title;
-        cardInfo.style.display = 'flex' // retarblir le display flex pour les cards qui ont été display none
-
+        if(i >= 19) {
+            const cardInfo = document.getElementById('card-info-' + i); 
+            cardInfo.style.display = 'flex' // retarblir le display flex pour les cards qui ont été display none. Seulement pour le section ou le genre est selectionnable
+        }
     } catch (error) {
         console.log('Erreur :', error);
     }
@@ -128,7 +128,7 @@ async function fetchInMovie(movie, i) {
 
 // DropDown Method
 function setDropdown() {
-    document.addEventListener("DOMContentLoaded", () => { // DOMContentLoaded :  écouteur d'événements  qui se déclenche lorsque le HTML initial de la page a été complètement chargé et analysé
+    document.addEventListener("DOMContentLoaded", () => { // DOMContentLoaded :  écouteur d'événements qui se déclenche lorsque le HTML initial de la page a été complètement chargé et analysé
         setDropdownDefaultValue()
         let dropdownOptions = document.querySelectorAll('.dropdown-item');
     
@@ -162,16 +162,16 @@ function setDropdownDefaultValue() {
 
 async function resquest() {
     try {
-        const bestMovieData = await movieRequest(bestMovieUrl); //1 
+        const bestMovieData = await movieRequest(bestMovieUrl);
         await mainMovieResquest(bestMovieData);
 
-        const biographyMovieData = await movieRequest(biographyMovieUrl); //2
+        const biographyMovieData = await movieRequest(biographyMovieUrl);
         await mainMovieResquest(biographyMovieData);
 
-        const actionMovieData = await movieRequest(actionMovieUrl); //3
+        const actionMovieData = await movieRequest(actionMovieUrl);
         await mainMovieResquest(actionMovieData);
 
-        const dropdownfirstDisplayData = await movieRequest(setDropdownDefaultValue()); //4
+        const dropdownfirstDisplayData = await movieRequest(setDropdownDefaultValue());
         await mainMovieResquest(dropdownfirstDisplayData);
     } catch (error) {
         console.log('Erreur request : ', error);
@@ -189,8 +189,8 @@ buttonsModal.forEach((btn) => (btn.addEventListener("click", async() => {
     const title = dataModal.title
     const year = dataModal.year
     const genres = dataModal.genres
-    let pg = '0'  //demander mentor 
-    const duration = dataModal.duration // en minutes
+    let pg = '0'
+    const duration = dataModal.duration // in minute
     const countries = dataModal.countries
     const imdb_score = dataModal.imdb_score
     const directors = dataModal.directors
@@ -217,7 +217,15 @@ buttonsModal.forEach((btn) => (btn.addEventListener("click", async() => {
 
 })))
 
-
 resquest();
 setDropdown();
 
+// Image du meilleur film est la meme que celle de la premiere de la catégorie meilleurs films ?
+// Ligne 192 : voir avec mentor (le 0)
+// Voir avec mentor, dans cahier des charges "Les recettes au box-office dans la modale" mais pas dans la maquette
+// Voir avec mentor, Readme ?
+// Mentor "Lorsqu’on clique sur le bouton du film en vedette ou sur l’image d’un des films, une fenêtre modale s’ouvre", ca ne parle pas du bouton détails, donc le faire ou pas ?
+
+// Faire le responsive tablette 
+// Faire le responsive tel (attention aux "Voir plus")
+// Régler les Erreurs dans la console (attention aux "Voir plus")
