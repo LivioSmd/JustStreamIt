@@ -226,6 +226,5 @@ buttonsModal.forEach((btn) => (btn.addEventListener("click", async() => {
 resquest();
 setDropdown();
 
-// Readme Desc projet 
 // Faire le responsive tablette 
 // Faire le responsive tel (attention aux "Voir plus")

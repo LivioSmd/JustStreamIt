@@ -224,4 +224,16 @@ p{
         font-size: 35px;
         line-height: 50px;
     }
+
+    .image-best-movie{
+        width: 92.5%;
+    }
+
+    .best-movie-details-button {
+        width: 32.5%;
+        height: 57px;
+        border-radius: 36px;
+        font-size: 19px;
+    }
+
 }
