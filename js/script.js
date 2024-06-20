@@ -1,6 +1,6 @@
 const bestMovieUrl = 'http://localhost:8000/api/v1/titles/?sort_by=-imdb_score';
 const biographyMovieUrl = 'http://localhost:8000/api/v1/titles/?genre=biography&sort_by=-imdb_score';
-const actionMovieUrl = 'http://localhost:8000/api/v1/titles/?genre=action&sort_by=-imdb_score';
+const crimeMovieUrl = 'http://localhost:8000/api/v1/titles/?genre=crime&sort_by=-imdb_score';
 const dropdown = document.getElementById('dropdown');
 
 
@@ -18,10 +18,8 @@ async function movieRequest(url) {
 
 function resetSource(target, lenght) { // enleve la source des cards qui sont vides
     for (let j = target; (j - 1) % 6!= 0; j++) {
-        const movieImage = document.getElementById('movie-img-' + j);
-        const movieTitle = document.getElementById('movie-title-' + j);
-        movieImage.src = '';
-        movieTitle.textContent = '';
+        document.getElementById('movie-img-' + j).src = '';
+        document.getElementById('movie-title-' + j).textContent = '';
 
         if(lenght < 5) {
             const cardInfo = document.getElementById('card-info-' + j); // pour afficher ou non les cards quand la categorie ne contient pas assez de films
@@ -30,23 +28,34 @@ function resetSource(target, lenght) { // enleve la source des cards qui sont vi
     }
 }
 
-function movieLoop(dataMovies, length) {
+async function movieLoop(dataMovies, length) {
     const target = i + length; // pour les categorie ne comptenant pas plus de 5 films
+    let first = true 
     console.log("target: ", target)
-
     try {
         for (const movie of dataMovies) {
-            fetchInMovie(movie, i);
-            i++;
-            console.log("for i: ", i)
-  
-            if ((i - 1) % 6 == 0) {
-                break;
-            } else if (i === target) {
-                resetSource(target, length)
-                break;
-            }
 
+            if (i === 1 && first) { // recup 7 films pour la premiere categorie
+                first = !first
+                console.log('Initial movie with i == 1');
+                i = 0; // réinitialisation de i à 0
+                await fetchInMovie(movie, i);
+                i = 1; // mise à jour de i à 2 après traitement
+                console.log('Updated i to 2: ', i);
+            } else {
+                await fetchInMovie(movie, i);
+                i++;
+                console.log("for i: ", i);
+    
+                if ((i - 1) % 6 === 0) { // stop la boucle si 5 films
+                    console.log('Reset i due to multiple of 6');
+                    break;
+                } else if (i === target) { // stop la boucle si catégorie pas complete (moins de 5 films)
+                    console.log('Reset source due to reaching target');
+                    resetSource(target, length);
+                    break;
+                }
+            }
         }
     } catch (error) {
         console.log('Erreur: ', error);
@@ -81,45 +90,23 @@ async function mainMovieResquest (data) {
 
 async function fetchInMovie(movie, i) {
     console.log("movie-title :", movie.title + "\nmovie-url: ", movie.url);
-    console.log("i: ",i);
+    console.log("testi: ",i);
 
     try {
         const data = await movieRequest(movie.url);
-        if (i === 1) {
-            const image = data.image_url;
-            const title = data.title;
-            const description = data.description;
-            const id = data.id;
-
-            const bestMovieImage = document.getElementById('best-movie-img');
-            const bestMovieTitle = document.getElementById('best-movie-title');
-            const bestMovieDescription = document.getElementById('best-movie-description');
-            const btnModal = document.getElementById('btn-best-movie');
-
-            bestMovieImage.src = image;
-            bestMovieTitle.textContent = title;
-            bestMovieDescription.textContent = description;
-            btnModal.setAttribute('data-id', id);
-        } 
-        const image = data.image_url;
-        const title = data.title;
-        const id = data.id;
-
-        console.log("image:", image)
-        console.log("title:", title)
-        console.log("id:", id)
-
-        const movieImage = document.getElementById('movie-img-' + i);
-        const movieTitle = document.getElementById('movie-title-' + i);
-        const btnModal = document.getElementById('btn-card-' + i); 
-
-        btnModal.setAttribute('data-id', id);
-        movieImage.src = image;
-        movieTitle.textContent = title;
-
-        if(i >= 19) {
-            const cardInfo = document.getElementById('card-info-' + i); 
-            cardInfo.style.display = 'flex' // retarblir le display flex pour les cards qui ont été display none. Seulement pour le section ou le genre est selectionnable
+        if (i === 0) {
+            document.getElementById('best-movie-img').src = data.image_url;
+            document.getElementById('best-movie-title').textContent = data.title;
+            document.getElementById('best-movie-description').textContent = data.description;
+            document.getElementById('btn-best-movie').setAttribute('data-id', data.id);
+        } else {
+            document.getElementById('movie-img-' + i).src = data.image_url;
+            document.getElementById('movie-title-' + i).textContent = data.title;
+            document.getElementById('btn-card-' + i).setAttribute('data-id', data.id);
+            if(i >= 19) {
+                const cardInfo = document.getElementById('card-info-' + i); 
+                cardInfo.style.display = 'flex' // retarblir le display flex pour les cards qui ont été display none. Seulement pour le section ou le genre est selectionnable
+            }
         }
     } catch (error) {
         console.log('Erreur :', error);
@@ -128,10 +115,12 @@ async function fetchInMovie(movie, i) {
 
 // DropDown Method
 function setDropdown() {
-    document.addEventListener("DOMContentLoaded", () => { // DOMContentLoaded :  écouteur d'événements qui se déclenche lorsque le HTML initial de la page a été complètement chargé et analysé
+    document.addEventListener("DOMContentLoaded", async () => { // DOMContentLoaded :  écouteur d'événements qui se déclenche lorsque le HTML initial de la page a été complètement chargé et analysé
         setDropdownDefaultValue()
-        let dropdownOptions = document.querySelectorAll('.dropdown-item');
-    
+        await getCategories()
+
+        let dropdownOptions = document.querySelectorAll('.dropdown-li');
+        console.log('dropdownOptions:' ,dropdownOptions)
         dropdownOptions.forEach(function(option) {
             option.addEventListener('click', async function(e) {
                 let selectedOption = this.innerText;
@@ -153,11 +142,45 @@ function setDropdown() {
 }
  
 function setDropdownDefaultValue() {
-    const dropdownDefault = 'Animation'
+    const dropdownDefault = 'Family'
     dropdown.innerText = dropdownDefault;
     const defaultUrl = url(dropdownDefault)
     console.log(defaultUrl)
     return defaultUrl
+}
+
+async function getCategories() {
+    let data = await movieRequest('http://localhost:8000/api/v1/genres/');
+    const categoriesList = []; 
+
+    data.results.forEach((item) => categoriesList.push(item.name));
+
+    try {
+        while (data.next) {
+            data = await movieRequest(data.next);
+            data.results.forEach((item) => categoriesList.push(item.name));
+        }
+        console.log('categoriesList: ', categoriesList);
+        console.log('No more pages to fetch.');
+    } catch (error) {
+        console.log('Erreur: ', error)
+    }
+    
+        const ul = document.getElementById('dropdown-ul')
+        for (categorie of categoriesList) {
+            console.log('categorie:' ,categorie)
+            const li = document.createElement('li')
+            li.classList.add('dropdown-li')
+
+            const a = document.createElement('a');
+            a.textContent = categorie
+            a.href = ('#dropdown')
+            a.classList.add('dropdown-item')
+            a.classList.add('p-2')
+
+            li.appendChild(a)
+            ul.appendChild(li)        
+        } 
 }
 
 async function resquest() {
@@ -168,7 +191,7 @@ async function resquest() {
         const biographyMovieData = await movieRequest(biographyMovieUrl);
         await mainMovieResquest(biographyMovieData);
 
-        const actionMovieData = await movieRequest(actionMovieUrl);
+        const actionMovieData = await movieRequest(crimeMovieUrl);
         await mainMovieResquest(actionMovieData);
 
         const dropdownfirstDisplayData = await movieRequest(setDropdownDefaultValue());
@@ -185,47 +208,24 @@ buttonsModal.forEach((btn) => (btn.addEventListener("click", async() => {
     const dataModal = await movieRequest(`http://localhost:8000/api/v1/titles/${id}`);
     console.log(dataModal)
 
-    const image = dataModal.image_url
-    const title = dataModal.title
-    const year = dataModal.year
-    const genres = dataModal.genres
-    let pg = '0'
-    const duration = dataModal.duration // in minute
-    const countries = dataModal.countries
-    const imdb_score = dataModal.imdb_score
-    const directors = dataModal.directors
-    const long_description = dataModal.long_description
-    const actors = dataModal.actors
-
-    const modalImage = document.getElementById('modal-img');
-    const modalTitle = document.getElementById('modal-title');
-    const modalYearGenres = document.getElementById('modal-year-genres');
-    const modalPgTimeCountries = document.getElementById('modal-pg-time-contries');
-    const modalImdb = document.getElementById('modal-imdb');
-    const modalDirectors = document.getElementById('modal-directors');
-    const modaldescription = document.getElementById('modal-description');
-    const modalActors = document.getElementById('modal-actors')
-
-    modalTitle.textContent = title;
-    modalImage.src = image;
-    modalYearGenres.textContent = `${year} - ${genres}`;
-    modalPgTimeCountries.textContent = `PG-${pg} - ${duration} minutes (${countries})`;
-    modalImdb.textContent = `IMDB Score: ${imdb_score}/10`;
-    modalDirectors.textContent = directors;
-    modaldescription.textContent = long_description;
-    modalActors.textContent = actors;
-
+    document.getElementById('modal-img').src = dataModal.image_url;
+    document.getElementById('modal-title').textContent = dataModal.title
+    document.getElementById('modal-year-genres').textContent = `${dataModal.year} - ${dataModal.genres}`;
+    document.getElementById('modal-imdb').textContent = `IMDB Score: ${dataModal.imdb_score}/10`;
+    document.getElementById('modal-directors').textContent = dataModal.directors;
+    document.getElementById('modal-description').textContent = dataModal.long_description;
+    document.getElementById('modal-actors').textContent = dataModal.actors;
+    
+    if (dataModal.rated === "Not rated or unkown rating") { // Verif si on a un PG, sinon on met 0
+        document.getElementById('modal-pg-time-contries').textContent = `PG-${0} - ${dataModal.duration} minutes (${dataModal.countries})`;
+    } else {
+        document.getElementById('modal-pg-time-contries').textContent = `PG-${data.rated} - ${dataModal.duration} minutes (${dataModal.countries})`;
+    }
 })))
 
 resquest();
 setDropdown();
 
-// Image du meilleur film est la meme que celle de la premiere de la catégorie meilleurs films ?
-// Ligne 192 : voir avec mentor (le 0)
-// Voir avec mentor, dans cahier des charges "Les recettes au box-office dans la modale" mais pas dans la maquette
-// Voir avec mentor, Readme ?
-// Mentor "Lorsqu’on clique sur le bouton du film en vedette ou sur l’image d’un des films, une fenêtre modale s’ouvre", ca ne parle pas du bouton détails, donc le faire ou pas ?
-
+// Readme Desc projet 
 // Faire le responsive tablette 
 // Faire le responsive tel (attention aux "Voir plus")
-// Régler les Erreurs dans la console (attention aux "Voir plus")
