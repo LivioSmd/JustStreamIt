@@ -13,67 +13,68 @@
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-    <div class="modal fade modal-dialog-scrollable modal-lg" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body ms-4">
-                    <div class="row justify-content-between">
-                        <div class="col">
-                            <div class="col">
-                                <h1 class="mb-2 mt-4" id="modal-title"></h1>
+    <div class="page-container">
+        <div class="page-size">
+            <div class="modal fade modal-dialog-scrollable modal-lg" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog d-flex justify-content-center">
+                    <div class="modal-content">
+                        <div class="modal-body ms-4">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <div class="row justify-content-between">
+                                <div class="col">
+                                    <div class="col order1">
+                                        <h1 class="mb-2 mt-4" id="modal-title"></h1>
+                                    </div>
+                                    <div class="col">
+                                        <h4 class="my-2" id="modal-year-genres"></h4>
+                                    </div>
+                                    <div class="col">
+                                        <h4 class="my-2" id="modal-pg-time-contries"></h4>
+                                    </div>
+                                    <div class="col">
+                                        <h4 class="mt-2 mb-5" id="modal-imdb"></h4>
+                                    </div>
+                                    <div class="col">
+                                        <h5 class="mb-2 mt-5">Réalisé par: </h5>
+                                    </div>
+                                    <div class="col">
+                                        <p class="my-2" id="modal-directors"></p>
+                                    </div>
+                                </div>
+                                <div class="col-auto order3">
+                                    <img src="" class="img-fluid rounded-start my-sm-3 mx-sm-4 image-modal" alt="modal-movie" id="modal-img">
+                                </div>
+                                <div class="col-12 order2">
+                                    <div class="col ">
+                                        <p class="mt-3 mb-5" id="modal-description"></p>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col">
-                                <h4 class="my-2" id="modal-year-genres"></h4>
+                            <div class="row">
+                                <div class="col">
+                                    <p class="modal-autor-title">Avec:</p>
+                                </div>
                             </div>
-                            <div class="col">
-                                <h4 class="my-2" id="modal-pg-time-contries"></h4>
+                            <div class="row">
+                                <div class="col">
+                                    <p class="modal-autor-text mb-sm-5" id="modal-actors"></p>
+                                </div>
                             </div>
-                            <div class="col">
-                                <h4 class="mt-2 mb-5" id="modal-imdb"></h4>
-                            </div>
-                            <div class="col">
-                                <h5 class="mb-2 mt-5">Réalisé par: </h5>
-                            </div>
-                            <div class="col">
-                                <p class="my-2" id="modal-directors"></p>
+                            <div class="row justify-content-center d-none d-sm-none">
+                                <button type="button" class="btn btn-secondary button-close-modal" data-bs-dismiss="modal">Fermer</button>
                             </div>
                         </div>
-                        <div class="col-auto">
-                            <img src="" class="img-fluid rounded-start my-3 mx-4 image-best-movie" alt="modal-movie" id="modal-img">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <p class="mt-3 mb-5" id="modal-description"></p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <p class="modal-autor-title">Avec:</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <p class="modal-autor-text mb-5" id="modal-actors">David Huddleston, Flea, Jack Kehler, Jeff Bridges, Jimmie Dale Gilmore, John Goodman, John Turturro, Julianne Moore, Mark Pellegrino, Peter Stormare, Philip Moon, Philip Seymour Hoffman, Steve Buscemi, Tara Reid, Torsten Voges</p>
-                        </div>
-                    </div>
-                    <div class="row justify-content-center">
-                        <button type="button" class="btn btn-secondary button-close-modal" data-bs-dismiss="modal">Fermer</button>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="page-container">
-        <div class="page-size">
             <section class="banner-section">
                 <div class="container text-center mt-5">
                     <div class="row banner-color">
-                        <div class="col col-sm-2">
+                        <div class="col col-sm-4">
                             <img src="images/logo.png" alt="Logo de JustStreamIt" class="my-3 mx-4 image-banner">
                         </div>
-                        <div class="col-8 align-self-center mx-5">
-                            <h3 class="d-none d-sm-flex">Vidéos à la demande</h3>
+                        <div class="col-8 align-self-center mx-5 m-sm-0">
+                            <h3 class="d-none d-sm-flex"Ò>Vidéos à la demande</h3>
                         </div>
                     </div>
                 </div>
@@ -92,10 +93,10 @@
                                         <div class="row text-start ms-1">
                                             <div class="card-body">
                                                 <h1 class="card-title" id="best-movie-title"></h1>
-                                                <p class="card-text mb-4 my-sm-5" id="best-movie-description"></p>
+                                                <p class="card-text mb-4 my-sm-0" id="best-movie-description"></p>
                                                 <div class="row">
                                                     <div class="col text-center text-sm-end">
-                                                        <button class="best-movie-details-button me-5 mb-1 mb-sm-3 btn-modal" id='btn-best-movie' type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Détails</button>
+                                                        <button class="best-movie-details-button btn-modal" id='btn-best-movie' type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Détails</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -115,7 +116,7 @@
                         </div>
                         <div class="col-12">
                             <div class="container">
-                                <div class="row justify-content-between mb-4">
+                                <div class="row justify-content-between mb-0 mb-sm-4">
                                     <div class="col-12 col-sm p-0 mb-5">
                                         <div class="card text-bg-dark categorie-movies-section-card">
                                             <img src="" class="card-img movie-image" alt="Categorie 1 section movie 1 picture" id="movie-img-1">
@@ -146,7 +147,10 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-12 col-sm p-0 mb-5 d-none d-sm-flex">
+                                    <div class="col mt-5 d-sm-none">
+                                        <button class="voir-plus-button state-change-button" data-plus="1">Voir plus</button>
+                                    </div>
+                                    <div class="col-12 col-sm p-0 mb-5 d-none d-sm-flex voir-plus-card-1">
                                         <div class="card text-bg-dark categorie-movies-section-card">
                                             <img src="" class="card-img movie-image" alt="Categorie 1 section movie 3 picture" id="movie-img-3">
                                             <div class="card-img-overlay p-0">
@@ -165,7 +169,7 @@
                                     </div>
                                 </div>
                                 <div class="row justify-content-between mb-5">
-                                    <div class="col-12 col-sm p-0 mb-5 d-none d-sm-flex">
+                                    <div class="col-12 col-sm p-0 mb-5 d-none d-sm-flex voir-plus-card-1">
                                         <div class="card text-bg-dark categorie-movies-section-card">
                                             <img src="" class="card-img movie-image" alt="Categorie 1 section movie 4 picture" id="movie-img-4">
                                             <div class="card-img-overlay p-0">
@@ -180,7 +184,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-12 col-sm p-0 px-sm-5 d-none d-sm-flex">
+                                    <div class="col-12 col-sm mb-5 p-0 px-sm-5 d-none d-lg-flex voir-plus-card-1">
                                         <div class="card text-bg-dark categorie-movies-section-card">
                                             <img src="" class="card-img movie-image" alt="Categorie 1 section movie 5 picture" id="movie-img-5">
                                             <div class="card-img-overlay p-0">
@@ -195,7 +199,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-12 col-sm p-0 mb-5 d-none d-sm-flex">
+                                    <div class="col-12 col-sm p-0 mb-5 d-none d-lg-flex voir-plus-card-1">
                                         <div class="card text-bg-dark categorie-movies-section-card">
                                             <img src="" class="card-img movie-image" alt="Categorie 1 section movie 6 picture" id="movie-img-6">
                                             <div class="card-img-overlay p-0">
@@ -210,6 +214,9 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="col d-sm-none">
+                                        <button class="voir-moins-button state-change-button d-none" data-moins="1">Voir moins</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -218,13 +225,13 @@
             </section>
             <section class="categorie-2-section">
                 <div class="container">
-                    <div class="row">
+                    <div class="row text-center text-sm-start">
                         <div class="col-12">
                             <h1 class="mt-2 mb-4">Biography</h1>
                         </div>
                         <div class="col-12">
                             <div class="container">
-                                <div class="row justify-content-between mb-5">
+                                <div class="row justify-content-between mb-0 mb-sm-4">
                                     <div class="col-12 col-sm p-0 mb-5">
                                         <div class="card text-bg-dark categorie-movies-section-card">
                                             <img src="" class="card-img movie-image" alt="Categorie 2 section movie 1 picture" id="movie-img-7">
@@ -255,7 +262,10 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-12 col-sm p-0 mb-5 d-none d-sm-flex">
+                                    <div class="col mt-5 d-sm-none">
+                                        <button class="voir-plus-button state-change-button" data-plus="2">Voir plus</button>
+                                    </div>
+                                    <div class="col-12 col-sm p-0 mb-5 d-none d-sm-flex voir-plus-card-2">
                                         <div class="card text-bg-dark categorie-movies-section-card">
                                             <img src="" class="card-img movie-image" alt="Categorie 2 section movie 3 picture" id="movie-img-9">
                                             <div class="card-img-overlay p-0">
@@ -272,7 +282,7 @@
                                     </div>
                                 </div>
                                 <div class="row justify-content-between mb-5">
-                                    <div class="col-12 col-sm p-0 mb-5 d-none d-sm-flex">
+                                    <div class="col-12 col-sm p-0 mb-5 d-none d-sm-flex voir-plus-card-2">
                                         <div class="card text-bg-dark categorie-movies-section-card">
                                             <img src="" class="card-img movie-image" alt="Categorie 2 section movie 4 picture" id="movie-img-10">
                                             <div class="card-img-overlay p-0">
@@ -287,7 +297,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-12 col-sm p-0 px-sm-5 d-none d-sm-flex">
+                                    <div class="col-12 col-sm mb-5 p-0 px-sm-5 d-none d-sm-flex voir-plus-card-2">
                                         <div class="card text-bg-dark categorie-movies-section-card">
                                             <img src="" class="card-img movie-image" alt="Categorie 2 section movie 5 picture" id="movie-img-11">
                                             <div class="card-img-overlay p-0">
@@ -302,7 +312,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-12 col-sm p-0 mb-5 d-none d-sm-flex">
+                                    <div class="col-12 col-sm p-0 mb-5 d-none d-sm-flex voir-plus-card-2">
                                         <div class="card text-bg-dark categorie-movies-section-card">
                                             <img src="" class="card-img movie-image" alt="Categorie 2 section movie 6 picture" id="movie-img-12">
                                             <div class="card-img-overlay p-0">
@@ -317,6 +327,9 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="col d-sm-none">
+                                        <button class="voir-moins-button state-change-button d-none" data-moins="2">Voir moins</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -325,13 +338,13 @@
             </section>
             <section class="categorie-3-section">
                 <div class="container">
-                    <div class="row">
+                    <div class="row text-center text-sm-start">
                         <div class="col-12">
                             <h1 class="mt-2 mb-4">Crime</h1>
                         </div>
                         <div class="col-12">
                             <div class="container">
-                                <div class="row justify-content-between mb-5">
+                                <div class="row justify-content-between mb-0 mb-sm-4">
                                     <div class="col-12 col-sm p-0 mb-5">
                                         <div class="card text-bg-dark categorie-movies-section-card">
                                             <img src="" class="card-img movie-image" alt="Categorie 3 section movie 1 picture" id="movie-img-13">
@@ -362,7 +375,10 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-12 col-sm p-0 mb-5 d-none d-sm-flex">
+                                    <div class="col mt-5 d-sm-none">
+                                        <button class="voir-plus-button state-change-button" data-plus="3">Voir plus</button>
+                                    </div>
+                                    <div class="col-12 col-sm p-0 mb-5 d-none d-sm-flex voir-plus-card-3">
                                         <div class="card text-bg-dark categorie-movies-section-card">
                                             <img src="" class="card-img movie-image" alt="Categorie 3 section movie 3 picture" id="movie-img-15">
                                             <div class="card-img-overlay p-0">
@@ -379,7 +395,7 @@
                                     </div>
                                 </div>
                                 <div class="row justify-content-between mb-5">
-                                    <div class="col-12 col-sm p-0 mb-5 d-none d-sm-flex">
+                                    <div class="col-12 col-sm p-0 mb-5 d-none d-sm-flex voir-plus-card-3">
                                         <div class="card text-bg-dark categorie-movies-section-card">
                                             <img src="" class="card-img movie-image" alt="Categorie 3 section movie 4 picture" id="movie-img-16">
                                             <div class="card-img-overlay p-0">
@@ -394,7 +410,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-12 col-sm p-0 px-sm-5 d-none d-sm-flex">
+                                    <div class="col-12 col-sm mb-5 p-0 px-sm-5 d-none d-sm-flex voir-plus-card-3">
                                         <div class="card text-bg-dark categorie-movies-section-card">
                                             <img src="" class="card-img movie-image" alt="Categorie 3 section movie 5 picture" id="movie-img-17">
                                             <div class="card-img-overlay p-0">
@@ -409,7 +425,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-12 col-sm p-0 mb-5 d-none d-sm-flex">
+                                    <div class="col-12 col-sm p-0 mb-5 d-none d-sm-flex voir-plus-card-3">
                                         <div class="card text-bg-dark categorie-movies-section-card">
                                             <img src="" class="card-img movie-image" alt="Categorie 3 section movie 6 picture" id="movie-img-18">
                                             <div class="card-img-overlay p-0">
@@ -424,6 +440,9 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="col d-sm-none">
+                                        <button class="voir-moins-button state-change-button d-none" data-moins="3">Voir moins</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -432,22 +451,22 @@
             </section>
             <section class="autres-1-section">
                 <div class="container">
-                    <div class="row">
-                        <div class="col-2 pe-0">
-                            <h1 class="mt-2 mb-4">Autres:</h1>
+                    <div class="row text-center text-sm-start">
+                        <div class="col-12 col-sm-2 pe-0">
+                            <h1 class="mt-sm-2 mb-sm-4">Autres:</h1>
                         </div> 
                         <div class="col p-0">
-                            <div class="dropdow mt-3">
-                                <button class="btn dropdown-toggle search-dropdown-autres p-2 mt-2" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="dropdown"></button>
+                            <div class="dropdow mt-3 mb-5 mb-sm-0">
+                                <button class="btn dropdown-toggle search-dropdown-autres px-3 p-2 mt-2" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="dropdown"></button>
                                 <ul class="dropdown-menu dropdown-ul p-0" id="dropdown-ul">
                                 </ul>
                             </div> 
                         </div>     
                     </div>
-                    <div class="row">
+                    <div class="row text-center text-sm-start">
                         <div class="col-12">
                             <div class="container">
-                                <div class="row justify-content-between mb-5">
+                                <div class="row justify-content-between mb-0 mb-sm-4">
                                     <div class="col-12 col-sm p-0 mb-5">
                                         <div class="card text-bg-dark categorie-movies-section-card" id="card-info-19">
                                             <img src="" class="card-img movie-image" alt="Categorie 4 section movie 1 picture" id="movie-img-19">
@@ -478,7 +497,10 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-12 col-sm p-0 mb-5 d-none d-sm-flex">
+                                    <div class="col mt-5 d-sm-none">
+                                        <button class="voir-plus-button state-change-button" data-plus="4">Voir plus</button>
+                                    </div>
+                                    <div class="col-12 col-sm p-0 mb-5 d-none d-sm-flex voir-plus-card-4">
                                         <div class="card text-bg-dark categorie-movies-section-card" id="card-info-21">
                                             <img src="" class="card-img movie-image" alt="Categorie 4 section movie 3 picture" id="movie-img-21">
                                             <div class="card-img-overlay p-0">
@@ -495,7 +517,7 @@
                                     </div>
                                 </div>
                                 <div class="row justify-content-between mb-5">
-                                    <div class="col-12 col-sm p-0 mb-5 d-none d-sm-flex">
+                                    <div class="col-12 col-sm p-0 mb-5 d-none d-sm-flex voir-plus-card-4">
                                         <div class="card text-bg-dark categorie-movies-section-card"  id="card-info-22">
                                             <img src="" class="card-img movie-image" alt="Categorie 4 section movie 4 picture" id="movie-img-22">
                                             <div class="card-img-overlay p-0">
@@ -510,7 +532,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-12 col-sm p-0 px-sm-5 d-none d-sm-flex">
+                                    <div class="col-12 col-sm mb-5 p-0 px-sm-5 d-none d-sm-flex voir-plus-card-4">
                                         <div class="card text-bg-dark categorie-movies-section-card" id="card-info-23">
                                             <img src="" class="card-img movie-image" alt="Categorie 4 section movie 5 picture" id="movie-img-23">
                                             <div class="card-img-overlay p-0">
@@ -525,7 +547,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-12 col-sm p-0 mb-5 d-none d-sm-flex">
+                                    <div class="col-12 col-sm p-0 mb-5 d-none d-sm-flex voir-plus-card-4">
                                         <div class="card text-bg-dark categorie-movies-section-card"  id="card-info-24">
                                             <img src="" class="card-img movie-image" alt="Categorie 4 section movie 6 picture" id="movie-img-24">
                                             <div class="card-img-overlay p-0">
@@ -539,6 +561,9 @@
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
+                                    <div class="col d-sm-none">
+                                        <button class="voir-moins-button state-change-button d-none" data-moins="4">Voir moins</button>
                                     </div>
                                 </div>
                             </div>

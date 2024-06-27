@@ -223,8 +223,39 @@ buttonsModal.forEach((btn) => (btn.addEventListener("click", async() => {
     }
 })))
 
+/* Bouton Voir plus et Voir moins */
+let voirPlusButton = document.querySelectorAll('.voir-plus-button');
+let voirMoinsButton = document.querySelectorAll('.voir-moins-button');
+
+voirPlusButton.forEach((btn) => (btn.addEventListener("click", async() => {
+    btn.classList.add('d-none');
+
+    category = btn.dataset.plus
+    let cardVoirPlus = document.querySelectorAll(`.voir-plus-card-${category}`);
+    cardVoirPlus.forEach((card) => {
+        card.classList.remove('d-none');
+    });
+
+    let thisVoirMoinsButton = document.querySelector(`[data-moins="${category}"]`)
+    console.log(thisVoirMoinsButton)
+    thisVoirMoinsButton.classList.remove('d-none');
+})))
+
+
+voirMoinsButton.forEach((btn) => (btn.addEventListener("click", async() => {
+    btn.classList.add('d-none');
+
+    category = btn.dataset.moins
+    let cardVoirPlus = document.querySelectorAll(`.voir-plus-card-${category}`);
+    cardVoirPlus.forEach((card) => {
+        card.classList.add('d-none');
+    });
+
+    let thisVoirPlusButton = document.querySelector(`[data-plus="${category}"]`)
+    thisVoirPlusButton.classList.remove('d-none');
+})));
+
 resquest();
 setDropdown();
 
 // Faire le responsive tablette 
-// Faire le responsive tel (attention aux "Voir plus")

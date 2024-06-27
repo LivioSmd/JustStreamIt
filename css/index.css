@@ -215,14 +215,26 @@ p{
 
 /* Styles pour les tablettes */
 @media (max-width: 1023px)  {
-
+    .best-movie-details-button{
+        position: absolute;
+        right: 30px;
+        bottom: 15px;
+        width: 21.5%;
+        height: 55px;
+        border-radius: 35px;
+        font-size: 21px;
+    }
 }
 
 /* Styles pour les mobiles */
 @media (max-width: 576px) {
     h1{
-        font-size: 35px;
+        font-size: 45px;
         line-height: 50px;
+    }
+
+    p{
+        font-size: 24px;
     }
 
     .image-best-movie{
@@ -234,6 +246,55 @@ p{
         height: 57px;
         border-radius: 36px;
         font-size: 19px;
+        position: unset;
     }
 
+    .state-change-button {
+        width: 72%;
+        height: 45px;
+        color: white;
+        background-color: #FA0B0B;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        font-family: Oswald;
+        font-size: 25px;
+        font-weight: 500;
+        line-height: 24.57px;
+        text-align: center
+    }
+
+    .search-dropdown-autres {
+        width: 95%;
+        font-size: 30px;
+    }
+
+    .dropdown-ul {
+        width: 76%;
+    }
+
+    .dropdown-item {
+        font-size: 30px;
+    }
+
+    .order1{
+        order: 1;
+    }
+
+    .order2{
+        order: 2;
+    }
+
+    .order3{
+        order: 3;
+        width: 100%;
+    }
+
+    .modal-content{
+        width: 85%;
+    }
+
+    .image-modal{
+        width: 93%;
+    }
 }
