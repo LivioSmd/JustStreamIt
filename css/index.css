@@ -98,6 +98,7 @@ p{
 .categorie-movies-section-card {
     border-radius: 0px;
     border: none;
+    width: 100%;
 }
 
 .categorie-movies-details{
@@ -213,6 +214,21 @@ p{
     width: 100%;
 }
 
+.state-change-button {
+    width: 72%;
+    height: 45px;
+    color: white;
+    background-color: #FA0B0B;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-family: Oswald;
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 24.57px;
+    text-align: center
+}
+
 /* Styles pour les tablettes */
 @media (max-width: 1023px)  {
     .best-movie-details-button{
@@ -223,6 +239,14 @@ p{
         height: 55px;
         border-radius: 35px;
         font-size: 21px;
+    }
+
+    .voir-plus-button{
+        order: 1;
+    }
+
+    .categorie-movies-section-card{
+        width: 100%;
     }
 }
 
@@ -247,21 +271,6 @@ p{
         border-radius: 36px;
         font-size: 19px;
         position: unset;
-    }
-
-    .state-change-button {
-        width: 72%;
-        height: 45px;
-        color: white;
-        background-color: #FA0B0B;
-        border: none;
-        border-radius: 25px;
-        cursor: pointer;
-        font-family: Oswald;
-        font-size: 25px;
-        font-weight: 500;
-        line-height: 24.57px;
-        text-align: center
     }
 
     .search-dropdown-autres {
