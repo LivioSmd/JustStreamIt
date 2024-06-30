@@ -19,7 +19,7 @@
                 <div class="modal-dialog d-flex justify-content-center">
                     <div class="modal-content">
                         <div class="modal-body ms-4">
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <button type="button" class="btn-close d-lg-none" data-bs-dismiss="modal" aria-label="Close"></button>
                             <div class="row justify-content-between">
                                 <div class="col">
                                     <div class="col order1">
@@ -42,7 +42,7 @@
                                     </div>
                                 </div>
                                 <div class="col-auto order3">
-                                    <img src="" class="img-fluid rounded-start my-sm-3 mx-sm-4 image-modal" alt="modal-movie" id="modal-img">
+                                    <img src="" class="img-fluid rounded-start my-lg-3 mx-lg-4 mb-3 image-modal" alt="modal-movie" id="modal-img">
                                 </div>
                                 <div class="col-12 order2">
                                     <div class="col ">
@@ -60,7 +60,7 @@
                                     <p class="modal-autor-text mb-sm-5" id="modal-actors"></p>
                                 </div>
                             </div>
-                            <div class="row justify-content-center d-none d-sm-none">
+                            <div class="row justify-content-center d-none d-lg-flex">
                                 <button type="button" class="btn btn-secondary button-close-modal" data-bs-dismiss="modal">Fermer</button>
                             </div>
                         </div>
@@ -70,11 +70,11 @@
             <section class="banner-section">
                 <div class="container text-center mt-5">
                     <div class="row banner-color">
-                        <div class="col col-sm-4">
+                        <div class="col col-sm-4 col-lg-2">
                             <img src="images/logo.png" alt="Logo de JustStreamIt" class="my-3 mx-4 image-banner">
                         </div>
-                        <div class="col-8 align-self-center mx-5 m-sm-0">
-                            <h3 class="d-none d-sm-flex"Ò>Vidéos à la demande</h3>
+                        <div class="col-8 align-self-center">
+                            <h3 class="d-none d-sm-flex mx-lg-5">Vidéos à la demande</h3>
                         </div>
                     </div>
                 </div>
@@ -86,13 +86,13 @@
                         <div class="col">
                             <div class="card mb-3 best-movie-card">
                                 <div class="row text-center text-sm-start">
-                                    <div class="col-md-4">
+                                    <div class="col-md-4 image-contain">
                                         <img src="" class="img-fluid rounded-start my-3 mx-sm-4 image-best-movie btn-modal" alt="best-movie-picture" id="best-movie-img">
                                     </div>
                                     <div class="col-md-8">
                                         <div class="row text-start ms-1">
                                             <div class="card-body">
-                                                <h1 class="card-title" id="best-movie-title"></h1>
+                                                <h1 class="card-title mb-lg-4" id="best-movie-title"></h1>
                                                 <p class="card-text mb-4 my-sm-0" id="best-movie-description"></p>
                                                 <div class="row">
                                                     <div class="col text-center text-sm-end">
@@ -217,110 +217,100 @@
                         <div class="col-12">
                             <h1 class="mt-2 mb-4">Biography</h1>
                         </div>
-                        <div class="col-12">
-                            <div class="container">
-                                <div class="row justify-content-between mb-0 mb-sm-4">
-                                    <div class="col-12 col-sm p-0 mb-5">
-                                        <div class="card text-bg-dark categorie-movies-section-card">
-                                            <img src="" class="card-img movie-image" alt="Categorie 2 section movie 1 picture" id="movie-img-7">
-                                            <div class="card-img-overlay p-0">
-                                                <div class="categorie-movies-details mt-5">
-                                                    <div class="fixed-container">
-                                                        <h2 id="movie-title-7"></h2>
-                                                        <div class="col text-lg-end">
-                                                            <button class="categorie-movies-details-button mb-3 me-3 btn-modal btn-7" id="btn-card-7" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                    </div>
+                    <div class="row justify-content-center mb-4">
+                        <div class="col-12 col-sm-6 col-lg-4 mb-4">
+                            <div class="card text-bg-dark categorie-movies-section-card">
+                                <img src="" class="card-img movie-image" alt="Categorie 2 section movie 1 picture" id="movie-img-7">
+                                <div class="card-img-overlay p-0">
+                                    <div class="categorie-movies-details mt-5">
+                                        <div class="fixed-container">
+                                            <h2 id="movie-title-7"></h2>
+                                            <div class="col text-lg-end">
+                                                <button class="categorie-movies-details-button mb-3 me-3 btn-modal btn-7" id="btn-card-7" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="col-12 col-sm p-0 px-sm-5">
-                                        <div class="card text-bg-dark categorie-movies-section-card">
-                                            <img src="" class="card-img movie-image" alt="Categorie 2 section movie 2 picture" id="movie-img-8">
-                                            <div class="card-img-overlay p-0">
-                                                <div class="categorie-movies-details mt-5">
-                                                    <div class="fixed-container">
-                                                        <h2 id="movie-title-8"></h2>
-                                                        <div class="col text-lg-end">
-                                                            <button class="categorie-movies-details-button mb-3 me-3 btn-modal btn-8" id="btn-card-8" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col mt-5 d-sm-none">
-                                        <button class="voir-plus-button state-change-button" data-plus="2">Voir plus</button>
-                                    </div>
-                                    <div class="col-12 col-sm p-0 mb-5 d-none d-sm-flex voir-plus-card-2">
-                                        <div class="card text-bg-dark categorie-movies-section-card">
-                                            <img src="" class="card-img movie-image" alt="Categorie 2 section movie 3 picture" id="movie-img-9">
-                                            <div class="card-img-overlay p-0">
-                                                <div class="categorie-movies-details mt-5">
-                                                    <div class="fixed-container">
-                                                        <h2 id="movie-title-9"></h2>
-                                                        <div class="col text-lg-end">
-                                                            <button class="categorie-movies-details-button mb-3 me-3 btn-modal btn-9" id="btn-card-9" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row justify-content-between mb-5">
-                                    <div class="col-12 col-sm p-0 mb-5 d-none d-sm-flex voir-plus-card-2">
-                                        <div class="card text-bg-dark categorie-movies-section-card">
-                                            <img src="" class="card-img movie-image" alt="Categorie 2 section movie 4 picture" id="movie-img-10">
-                                            <div class="card-img-overlay p-0">
-                                                <div class="categorie-movies-details mt-5">
-                                                    <div class="fixed-container">
-                                                        <h2 id="movie-title-10"></h2>
-                                                        <div class="col text-lg-end">
-                                                            <button class="categorie-movies-details-button mb-3 me-3 btn-modal btn-10" id="btn-card-10" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-sm mb-5 p-0 px-sm-5 d-none d-sm-flex voir-plus-card-2">
-                                        <div class="card text-bg-dark categorie-movies-section-card">
-                                            <img src="" class="card-img movie-image" alt="Categorie 2 section movie 5 picture" id="movie-img-11">
-                                            <div class="card-img-overlay p-0">
-                                                <div class="categorie-movies-details mt-5">
-                                                    <div class="fixed-container">
-                                                        <h2 id="movie-title-11"></h2>
-                                                        <div class="col text-lg-end">
-                                                            <button class="categorie-movies-details-button mb-3 me-3 btn-modal btn-11"  id="btn-card-11" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-sm p-0 mb-5 d-none d-sm-flex voir-plus-card-2">
-                                        <div class="card text-bg-dark categorie-movies-section-card">
-                                            <img src="" class="card-img movie-image" alt="Categorie 2 section movie 6 picture" id="movie-img-12">
-                                            <div class="card-img-overlay p-0">
-                                                <div class="categorie-movies-details mt-5">
-                                                    <div class="fixed-container">
-                                                        <h2 id="movie-title-12"></h2>
-                                                        <div class="col text-lg-end">
-                                                            <button class="categorie-movies-details-button mb-3 me-3 btn-modal btn-12" id="btn-card-12" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col d-sm-none">
-                                        <button class="voir-moins-button state-change-button d-none" data-moins="2">Voir moins</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="col-12 col-sm-6 col-lg-4 mb-4">
+                            <div class="card text-bg-dark categorie-movies-section-card">
+                                <img src="" class="card-img movie-image" alt="Categorie 2 section movie 2 picture" id="movie-img-8">
+                                <div class="card-img-overlay p-0">
+                                    <div class="categorie-movies-details mt-5">
+                                        <div class="fixed-container">
+                                            <h2 id="movie-title-8"></h2>
+                                            <div class="col text-lg-end">
+                                                <button class="categorie-movies-details-button mb-3 me-3 btn-modal btn-8" id="btn-card-8" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="voir-plus-button state-change-button mt-4 d-lg-none" data-plus="2">Voir plus</button>
+                        <div class="col-12 col-sm-6 col-lg-4 mb-4 d-none d-sm-flex voir-plus-card-2">
+                            <div class="card text-bg-dark categorie-movies-section-card">
+                                <img src="" class="card-img movie-image" alt="Categorie 2 section movie 3 picture" id="movie-img-9">
+                                <div class="card-img-overlay p-0">
+                                    <div class="categorie-movies-details mt-5">
+                                        <div class="fixed-container">
+                                            <h2 id="movie-title-9"></h2>
+                                            <div class="col text-lg-end">
+                                                <button class="categorie-movies-details-button mb-3 me-3 btn-modal btn-9" id="btn-card-9" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-4 mb-4 d-none d-sm-flex voir-plus-card-2">
+                            <div class="card text-bg-dark categorie-movies-section-card">
+                                <img src="" class="card-img movie-image" alt="Categorie 2 section movie 4 picture" id="movie-img-10">
+                                <div class="card-img-overlay p-0">
+                                    <div class="categorie-movies-details mt-5">
+                                        <div class="fixed-container">
+                                            <h2 id="movie-title-10"></h2>
+                                            <div class="col text-lg-end">
+                                                <button class="categorie-movies-details-button mb-3 me-3 btn-modal btn-10" id="btn-card-10" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-4 mb-4 d-none d-lg-flex voir-plus-card-2">
+                            <div class="card text-bg-dark categorie-movies-section-card">
+                                <img src="" class="card-img movie-image" alt="Categorie 2 section movie 5 picture" id="movie-img-11">
+                                <div class="card-img-overlay p-0">
+                                    <div class="categorie-movies-details mt-5">
+                                        <div class="fixed-container">
+                                            <h2 id="movie-title-11"></h2>
+                                            <div class="col text-lg-end">
+                                                <button class="categorie-movies-details-button mb-3 me-3 btn-modal btn11" id="btn-card-11" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-4 mb-4 d-none d-lg-flex voir-plus-card-2">
+                            <div class="card text-bg-dark categorie-movies-section-card">
+                                <img src="" class="card-img movie-image" alt="Categorie 2 section movie 6 picture" id="movie-img-12">
+                                <div class="card-img-overlay p-0">
+                                    <div class="categorie-movies-details mt-5">
+                                        <div class="fixed-container">
+                                            <h2 id="movie-title-12"></h2>
+                                            <div class="col text-lg-end">
+                                                <button class="categorie-movies-details-button mb-3 me-3 btn-modal btn-12" id="btn-card-12" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="voir-moins-button state-change-button d-none mt-4" data-moins="2">Voir moins</button>
                     </div>
                 </div>
             </section>
@@ -330,110 +320,100 @@
                         <div class="col-12">
                             <h1 class="mt-2 mb-4">Crime</h1>
                         </div>
-                        <div class="col-12">
-                            <div class="container">
-                                <div class="row justify-content-between mb-0 mb-sm-4">
-                                    <div class="col-12 col-sm p-0 mb-5">
-                                        <div class="card text-bg-dark categorie-movies-section-card">
-                                            <img src="" class="card-img movie-image" alt="Categorie 3 section movie 1 picture" id="movie-img-13">
-                                            <div class="card-img-overlay p-0">
-                                                <div class="categorie-movies-details mt-5">
-                                                    <div class="fixed-container">
-                                                        <h2 id="movie-title-13"></h2>
-                                                        <div class="col text-lg-end">
-                                                            <button class="categorie-movies-details-button mb-3 me-3 btn-modal btn-13" id="btn-card-13" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                    </div>
+                    <div class="row justify-content-center mb-4">
+                        <div class="col-12 col-sm-6 col-lg-4 mb-4">
+                            <div class="card text-bg-dark categorie-movies-section-card">
+                                <img src="" class="card-img movie-image" alt="Categorie 3 section movie 1 picture" id="movie-img-13">
+                                <div class="card-img-overlay p-0">
+                                    <div class="categorie-movies-details mt-5">
+                                        <div class="fixed-container">
+                                            <h2 id="movie-title-13"></h2>
+                                            <div class="col text-lg-end">
+                                                <button class="categorie-movies-details-button mb-3 me-3 btn-modal btn-13" id="btn-card-13" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="col-12 col-sm p-0 px-sm-5">
-                                        <div class="card text-bg-dark categorie-movies-section-card">
-                                            <img src="" class="card-img movie-image" alt="Categorie 3 section movie 2 picture" id="movie-img-14">
-                                            <div class="card-img-overlay p-0">
-                                                <div class="categorie-movies-details mt-5">
-                                                    <div class="fixed-container">
-                                                        <h2 id="movie-title-14"></h2>
-                                                        <div class="col text-lg-end">
-                                                            <button class="categorie-movies-details-button mb-3 me-3 btn-modal btn-14" id="btn-card-14" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col mt-5 d-sm-none">
-                                        <button class="voir-plus-button state-change-button" data-plus="3">Voir plus</button>
-                                    </div>
-                                    <div class="col-12 col-sm p-0 mb-5 d-none d-sm-flex voir-plus-card-3">
-                                        <div class="card text-bg-dark categorie-movies-section-card">
-                                            <img src="" class="card-img movie-image" alt="Categorie 3 section movie 3 picture" id="movie-img-15">
-                                            <div class="card-img-overlay p-0">
-                                                <div class="categorie-movies-details mt-5">
-                                                    <div class="fixed-container">
-                                                        <h2 id="movie-title-15"></h2>
-                                                        <div class="col text-lg-end">
-                                                            <button class="categorie-movies-details-button mb-3 me-3 btn-modal btn-15" id="btn-card-15" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row justify-content-between mb-5">
-                                    <div class="col-12 col-sm p-0 mb-5 d-none d-sm-flex voir-plus-card-3">
-                                        <div class="card text-bg-dark categorie-movies-section-card">
-                                            <img src="" class="card-img movie-image" alt="Categorie 3 section movie 4 picture" id="movie-img-16">
-                                            <div class="card-img-overlay p-0">
-                                                <div class="categorie-movies-details mt-5">
-                                                    <div class="fixed-container">
-                                                        <h2 id="movie-title-16"></h2>
-                                                        <div class="col text-lg-end">
-                                                            <button class="categorie-movies-details-button mb-3 me-3 btn-modal btn-16" id="btn-card-16" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-sm mb-5 p-0 px-sm-5 d-none d-sm-flex voir-plus-card-3">
-                                        <div class="card text-bg-dark categorie-movies-section-card">
-                                            <img src="" class="card-img movie-image" alt="Categorie 3 section movie 5 picture" id="movie-img-17">
-                                            <div class="card-img-overlay p-0">
-                                                <div class="categorie-movies-details mt-5">
-                                                    <div class="fixed-container">
-                                                        <h2 id="movie-title-17"></h2>
-                                                        <div class="col text-lg-end">
-                                                            <button class="categorie-movies-details-button mb-3 me-3 btn-modal btn-17" id="btn-card-17" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-sm p-0 mb-5 d-none d-sm-flex voir-plus-card-3">
-                                        <div class="card text-bg-dark categorie-movies-section-card">
-                                            <img src="" class="card-img movie-image" alt="Categorie 3 section movie 6 picture" id="movie-img-18">
-                                            <div class="card-img-overlay p-0">
-                                                <div class="categorie-movies-details mt-5">
-                                                    <div class="fixed-container">
-                                                        <h2 id="movie-title-18"></h2>
-                                                        <div class="col text-lg-end">
-                                                            <button class="categorie-movies-details-button mb-3 me-3 btn-modal btn-18" id="btn-card-18" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col d-sm-none">
-                                        <button class="voir-moins-button state-change-button d-none" data-moins="3">Voir moins</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="col-12 col-sm-6 col-lg-4 mb-4">
+                            <div class="card text-bg-dark categorie-movies-section-card">
+                                <img src="" class="card-img movie-image" alt="Categorie 3 section movie 2 picture" id="movie-img-14">
+                                <div class="card-img-overlay p-0">
+                                    <div class="categorie-movies-details mt-5">
+                                        <div class="fixed-container">
+                                            <h2 id="movie-title-14"></h2>
+                                            <div class="col text-lg-end">
+                                                <button class="categorie-movies-details-button mb-3 me-3 btn-modal btn-14" id="btn-card-14" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="voir-plus-button state-change-button mt-4 d-lg-none" data-plus="3">Voir plus</button>
+                        <div class="col-12 col-sm-6 col-lg-4 mb-4 d-none d-sm-flex voir-plus-card-3">
+                            <div class="card text-bg-dark categorie-movies-section-card">
+                                <img src="" class="card-img movie-image" alt="Categorie 3 section movie 3 picture" id="movie-img-15">
+                                <div class="card-img-overlay p-0">
+                                    <div class="categorie-movies-details mt-5">
+                                        <div class="fixed-container">
+                                            <h2 id="movie-title-15"></h2>
+                                            <div class="col text-lg-end">
+                                                <button class="categorie-movies-details-button mb-3 me-3 btn-modal btn-15" id="btn-card-15" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-4 mb-4 d-none d-sm-flex voir-plus-card-3">
+                            <div class="card text-bg-dark categorie-movies-section-card">
+                                <img src="" class="card-img movie-image" alt="Categorie 3 section movie 4 picture" id="movie-img-16">
+                                <div class="card-img-overlay p-0">
+                                    <div class="categorie-movies-details mt-5">
+                                        <div class="fixed-container">
+                                            <h2 id="movie-title-16"></h2>
+                                            <div class="col text-lg-end">
+                                                <button class="categorie-movies-details-button mb-3 me-3 btn-modal btn-16" id="btn-card-16" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-4 mb-4 d-none d-lg-flex voir-plus-card-3">
+                            <div class="card text-bg-dark categorie-movies-section-card">
+                                <img src="" class="card-img movie-image" alt="Categorie 3 section movie 5 picture" id="movie-img-17">
+                                <div class="card-img-overlay p-0">
+                                    <div class="categorie-movies-details mt-5">
+                                        <div class="fixed-container">
+                                            <h2 id="movie-title-17"></h2>
+                                            <div class="col text-lg-end">
+                                                <button class="categorie-movies-details-button mb-3 me-3 btn-modal btn-17" id="btn-card-17" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-4 mb-4 d-none d-lg-flex voir-plus-card-3">
+                            <div class="card text-bg-dark categorie-movies-section-card">
+                                <img src="" class="card-img movie-image" alt="Categorie 3 section movie 6 picture" id="movie-img-18">
+                                <div class="card-img-overlay p-0">
+                                    <div class="categorie-movies-details mt-5">
+                                        <div class="fixed-container">
+                                            <h2 id="movie-title-18"></h2>
+                                            <div class="col text-lg-end">
+                                                <button class="categorie-movies-details-button mb-3 me-3 btn-modal btn-18" id="btn-card-18" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="voir-moins-button state-change-button d-none mt-4" data-moins="3">Voir moins</button>
                     </div>
                 </div>
             </section>
@@ -451,111 +431,99 @@
                             </div> 
                         </div>     
                     </div>
-                    <div class="row text-center text-sm-start">
-                        <div class="col-12">
-                            <div class="container">
-                                <div class="row justify-content-between mb-0 mb-sm-4">
-                                    <div class="col-12 col-sm p-0 mb-5">
-                                        <div class="card text-bg-dark categorie-movies-section-card" id="card-info-19">
-                                            <img src="" class="card-img movie-image" alt="Categorie 4 section movie 1 picture" id="movie-img-19">
-                                            <div class="card-img-overlay p-0">
-                                                <div class="categorie-movies-details mt-5">
-                                                    <div class="fixed-container">
-                                                        <h2 id="movie-title-19"></h2>
-                                                        <div class="col text-lg-end">
-                                                            <button class="categorie-movies-details-button mb-3 me-3 btn-modal btn-19" id="btn-card-19" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                    <div class="row justify-content-center mb-4">
+                        <div class="col-12 col-sm-6 col-lg-4 mb-4">
+                            <div class="card text-bg-dark categorie-movies-section-card" id="card-info-19">
+                                <img src="" class="card-img movie-image" alt="Categorie 4 section movie 1 picture" id="movie-img-19">
+                                <div class="card-img-overlay p-0">
+                                    <div class="categorie-movies-details mt-5">
+                                        <div class="fixed-container">
+                                            <h2 id="movie-title-19"></h2>
+                                            <div class="col text-lg-end">
+                                                <button class="categorie-movies-details-button mb-3 me-3 btn-modal btn-19" id="btn-card-19" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="col-12 col-sm p-0 px-sm-5">
-                                        <div class="card text-bg-dark categorie-movies-section-card" id="card-info-20">
-                                            <img src="" class="card-img movie-image" alt="Categorie 4 section movie 2 picture" id="movie-img-20">
-                                            <div class="card-img-overlay p-0">
-                                                <div class="categorie-movies-details mt-5">
-                                                    <div class="fixed-container">
-                                                        <h2 id="movie-title-20"></h2>
-                                                        <div class="col text-lg-end">
-                                                            <button class="categorie-movies-details-button mb-3 me-3 btn-modal btn-20" id="btn-card-20" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col mt-5 d-sm-none">
-                                        <button class="voir-plus-button state-change-button" data-plus="4">Voir plus</button>
-                                    </div>
-                                    <div class="col-12 col-sm p-0 mb-5 d-none d-sm-flex voir-plus-card-4">
-                                        <div class="card text-bg-dark categorie-movies-section-card" id="card-info-21">
-                                            <img src="" class="card-img movie-image" alt="Categorie 4 section movie 3 picture" id="movie-img-21">
-                                            <div class="card-img-overlay p-0">
-                                                <div class="categorie-movies-details mt-5">
-                                                    <div class="fixed-container">
-                                                        <h2 id="movie-title-21"></h2>
-                                                        <div class="col text-lg-end">
-                                                            <button class="categorie-movies-details-button mb-3 me-3 btn-modal btn-21" id="btn-card-21" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row justify-content-between mb-5">
-                                    <div class="col-12 col-sm p-0 mb-5 d-none d-sm-flex voir-plus-card-4">
-                                        <div class="card text-bg-dark categorie-movies-section-card"  id="card-info-22">
-                                            <img src="" class="card-img movie-image" alt="Categorie 4 section movie 4 picture" id="movie-img-22">
-                                            <div class="card-img-overlay p-0">
-                                                <div class="categorie-movies-details mt-5">
-                                                    <div class="fixed-container">
-                                                        <h2 id="movie-title-22"></h2>
-                                                        <div class="col text-lg-end">
-                                                            <button class="categorie-movies-details-button mb-3 me-3 btn-modal btn-22" id="btn-card-22" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-sm mb-5 p-0 px-sm-5 d-none d-sm-flex voir-plus-card-4">
-                                        <div class="card text-bg-dark categorie-movies-section-card" id="card-info-23">
-                                            <img src="" class="card-img movie-image" alt="Categorie 4 section movie 5 picture" id="movie-img-23">
-                                            <div class="card-img-overlay p-0">
-                                                <div class="categorie-movies-details mt-5">
-                                                    <div class="fixed-container">
-                                                        <h2 id="movie-title-23"></h2>
-                                                        <div class="col text-lg-end">
-                                                            <button class="categorie-movies-details-button mb-3 me-3 btn-modal btn-23" id="btn-card-23" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-sm p-0 mb-5 d-none d-sm-flex voir-plus-card-4">
-                                        <div class="card text-bg-dark categorie-movies-section-card"  id="card-info-24">
-                                            <img src="" class="card-img movie-image" alt="Categorie 4 section movie 6 picture" id="movie-img-24">
-                                            <div class="card-img-overlay p-0">
-                                                <div class="categorie-movies-details mt-5">
-                                                    <div class="fixed-container">
-                                                        <h2 id="movie-title-24"></h2>
-                                                        <div class="col text-lg-end">
-                                                            <button class="categorie-movies-details-button mb-3 me-3 btn-modal btn-24" id="btn-card-24" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col d-sm-none">
-                                        <button class="voir-moins-button state-change-button d-none" data-moins="4">Voir moins</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="col-12 col-sm-6 col-lg-4 mb-4">
+                            <div class="card text-bg-dark categorie-movies-section-card" id="card-info-20">
+                                <img src="" class="card-img movie-image" alt="Categorie 4 section movie 2 picture" id="movie-img-20">
+                                <div class="card-img-overlay p-0">
+                                    <div class="categorie-movies-details mt-5">
+                                        <div class="fixed-container">
+                                            <h2 id="movie-title-20"></h2>
+                                            <div class="col text-lg-end">
+                                                <button class="categorie-movies-details-button mb-3 me-3 btn-modal btn-20" id="btn-card-20" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="voir-plus-button state-change-button mt-4 d-lg-none" data-plus="4">Voir plus</button>
+                        <div class="col-12 col-sm-6 col-lg-4 mb-4 d-none d-sm-flex voir-plus-card-4">
+                            <div class="card text-bg-dark categorie-movies-section-card" id="card-info-21">
+                                <img src="" class="card-img movie-image" alt="Categorie 4 section movie 3 picture" id="movie-img-21">
+                                <div class="card-img-overlay p-0">
+                                    <div class="categorie-movies-details mt-5">
+                                        <div class="fixed-container">
+                                            <h2 id="movie-title-21"></h2>
+                                            <div class="col text-lg-end">
+                                                <button class="categorie-movies-details-button mb-3 me-3 btn-modal btn-21" id="btn-card-21" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-4 mb-4 d-none d-sm-flex voir-plus-card-4">
+                            <div class="card text-bg-dark categorie-movies-section-card" id="card-info-22">
+                                <img src="" class="card-img movie-image" alt="Categorie 4 section movie 4 picture" id="movie-img-22">
+                                <div class="card-img-overlay p-0">
+                                    <div class="categorie-movies-details mt-5">
+                                        <div class="fixed-container">
+                                            <h2 id="movie-title-22"></h2>
+                                            <div class="col text-lg-end">
+                                                <button class="categorie-movies-details-button mb-3 me-3 btn-modal btn-22" id="btn-card-22" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-4 mb-4 d-none d-lg-flex voir-plus-card-4">
+                            <div class="card text-bg-dark categorie-movies-section-card"  id="card-info-23">
+                                <img src="" class="card-img movie-image" alt="Categorie 4 section movie 5 picture" id="movie-img-23">
+                                <div class="card-img-overlay p-0">
+                                    <div class="categorie-movies-details mt-5">
+                                        <div class="fixed-container">
+                                            <h2 id="movie-title-23"></h2>
+                                            <div class="col text-lg-end">
+                                                <button class="categorie-movies-details-button mb-3 me-3 btn-modal btn-23" id="btn-card-23" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-4 mb-4 d-none d-lg-flex voir-plus-card-4">
+                            <div class="card text-bg-dark categorie-movies-section-card"  id="card-info-24">
+                                <img src="" class="card-img movie-image" alt="Categorie 4 section movie 6 picture" id="movie-img-24">
+                                <div class="card-img-overlay p-0">
+                                    <div class="categorie-movies-details mt-5">
+                                        <div class="fixed-container">
+                                            <h2 id="movie-title-24"></h2>
+                                            <div class="col text-lg-end">
+                                                <button class="categorie-movies-details-button mb-3 me-3 btn-modal btn-24" id="btn-card-24" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="voir-moins-button state-change-button d-none mt-4" data-moins="4">Voir moins</button>
                     </div>
                 </div>
             </section>

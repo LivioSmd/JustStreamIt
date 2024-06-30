@@ -20,7 +20,7 @@ h2{
 }
 
 h3{
-    font-size: 45px;
+    font-size: 50px;
     font-weight: 100;
     font-family: Oswald;
     color: #FFFFFF;
@@ -76,12 +76,19 @@ p{
     border-radius: 0px
 }
 
+.image-contain{
+    width: 25%;
+}
+
 .image-best-movie{
     width: 257px;
 }
 
 .best-movie-details-button{
-    width: 26.5%;
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    width: 20%;
     height: 70px;
     color: white;
     background-color: #FA0B0B;
@@ -199,7 +206,7 @@ p{
     border-radius: 25px;
     cursor: pointer;
     font-family: Oswald;
-    font-size: 15px;
+    font-size: 20px;
     font-weight: 500;
     line-height: 24.57px;
     text-align: center;
@@ -229,10 +236,13 @@ p{
     text-align: center
 }
 
+.image-modal {
+    width: 250px;
+}
+
 /* Styles pour les tablettes */
 @media (max-width: 1023px)  {
     .best-movie-details-button{
-        position: absolute;
         right: 30px;
         bottom: 15px;
         width: 21.5%;
@@ -247,6 +257,37 @@ p{
 
     .categorie-movies-section-card{
         width: 100%;
+    }
+
+    .order1{
+        order: 1;
+    }
+
+    .order2{
+        order: 2;
+    }
+
+    .order3{
+        order: 3;
+        width: 100%;
+    }
+
+    .btn-close{
+        color: #FA0B0B;
+        font-family: Oswald;
+        font-size: 25px;
+        font-weight: 500;
+        line-height: 47.42px;
+        text-align: center;
+        opacity: 1;
+        box-sizing: border-box;
+        position: absolute;
+        right: 20px;
+        top: 50px;
+    }
+
+    .image-modal{
+        width: 93%;
     }
 }
 
@@ -286,24 +327,9 @@ p{
         font-size: 30px;
     }
 
-    .order1{
-        order: 1;
-    }
-
-    .order2{
-        order: 2;
-    }
-
-    .order3{
-        order: 3;
-        width: 100%;
-    }
-
     .modal-content{
         width: 85%;
     }
 
-    .image-modal{
-        width: 93%;
-    }
+
 }
