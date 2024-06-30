@@ -273,7 +273,7 @@ p{
     }
 
     .btn-close{
-        color: #FA0B0B;
+        filter: invert(35%) sepia(100%) saturate(7351%); /* red color */
         font-family: Oswald;
         font-size: 25px;
         font-weight: 500;
@@ -331,5 +331,7 @@ p{
         width: 85%;
     }
 
-
+    .image-contain{
+        width: 100%;
+    }
 }

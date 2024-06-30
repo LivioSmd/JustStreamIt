@@ -31,21 +31,17 @@ function resetSource(target, lenght) { // enleve la source des cards qui sont vi
 async function movieLoop(dataMovies, length) {
     const target = i + length; // pour les categorie ne comptenant pas plus de 5 films
     let first = true 
-    console.log("target: ", target)
     try {
         for (const movie of dataMovies) {
 
             if (i === 1 && first) { // recup 7 films pour la premiere categorie
                 first = !first
-                console.log('Initial movie with i == 1');
                 i = 0; // réinitialisation de i à 0
                 await fetchInMovie(movie, i);
                 i = 1; // mise à jour de i à 2 après traitement
-                console.log('Updated i to 2: ', i);
             } else {
                 await fetchInMovie(movie, i);
                 i++;
-                console.log("for i: ", i);
     
                 if ((i - 1) % 6 === 0) { // stop la boucle si 5 films
                     console.log('Reset i due to multiple of 6');
@@ -90,7 +86,6 @@ async function mainMovieResquest (data) {
 
 async function fetchInMovie(movie, i) {
     console.log("movie-title :", movie.title + "\nmovie-url: ", movie.url);
-    console.log("testi: ",i);
 
     try {
         const data = await movieRequest(movie.url);
@@ -145,7 +140,6 @@ function setDropdownDefaultValue() {
     const dropdownDefault = 'Family'
     dropdown.innerText = dropdownDefault;
     const defaultUrl = url(dropdownDefault)
-    console.log(defaultUrl)
     return defaultUrl
 }
 
@@ -204,7 +198,6 @@ async function resquest() {
 let buttonsModal = document.querySelectorAll('.btn-modal');
 buttonsModal.forEach((btn) => (btn.addEventListener("click", async() => {
     id = btn.dataset.id
-    console.log(id)
     const dataModal = await movieRequest(`http://localhost:8000/api/v1/titles/${id}`);
     console.log(dataModal)
 
@@ -237,7 +230,6 @@ voirPlusButton.forEach((btn) => (btn.addEventListener("click", async() => {
     });
 
     let thisVoirMoinsButton = document.querySelector(`[data-moins="${category}"]`)
-    console.log(thisVoirMoinsButton)
     thisVoirMoinsButton.classList.remove('d-none');
 })))
 
@@ -257,5 +249,3 @@ voirMoinsButton.forEach((btn) => (btn.addEventListener("click", async() => {
 
 resquest();
 setDropdown();
-
-// Faire le responsive tablette 
