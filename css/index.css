@@ -245,10 +245,11 @@ p{
     .best-movie-details-button{
         right: 30px;
         bottom: 15px;
-        width: 21.5%;
+        width: 150px;
         height: 55px;
         border-radius: 35px;
         font-size: 21px;
+        position: unset;
     }
 
     .voir-plus-button{
@@ -289,6 +290,10 @@ p{
     .image-modal{
         width: 93%;
     }
+
+    .image-contain{
+        width: 33%;
+    }
 }
 
 /* Styles pour les mobiles */
@@ -311,7 +316,6 @@ p{
         height: 57px;
         border-radius: 36px;
         font-size: 19px;
-        position: unset;
     }
 
     .search-dropdown-autres {

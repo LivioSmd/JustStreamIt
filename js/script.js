@@ -16,37 +16,37 @@ async function movieRequest(url) {
     return data;
 }
 
-function resetSource(target, lenght) { // enleve la source des cards qui sont vides
+function resetSource(target, lenght) { // remove the source from empty cards
     for (let j = target; (j - 1) % 6!= 0; j++) {
         document.getElementById('movie-img-' + j).src = '';
         document.getElementById('movie-title-' + j).textContent = '';
 
         if(lenght < 5) {
-            const cardInfo = document.getElementById('card-info-' + j); // pour afficher ou non les cards quand la categorie ne contient pas assez de films
+            const cardInfo = document.getElementById('card-info-' + j); // to display or not the cards when the category does not contain enough films
             cardInfo.style.display = 'none'
         }
     }
 }
 
 async function movieLoop(dataMovies, length) {
-    const target = i + length; // pour les categorie ne comptenant pas plus de 5 films
+    const target = i + length; // for categories with no more than 5 films
     let first = true 
     try {
         for (const movie of dataMovies) {
 
-            if (i === 1 && first) { // recup 7 films pour la premiere categorie
+            if (i === 1 && first) { // recovers 7 films for the first category
                 first = !first
-                i = 0; // réinitialisation de i à 0
+                i = 0; // reset i to 0
                 await fetchInMovie(movie, i);
-                i = 1; // mise à jour de i à 2 après traitement
+                i = 1;
             } else {
                 await fetchInMovie(movie, i);
                 i++;
     
-                if ((i - 1) % 6 === 0) { // stop la boucle si 5 films
+                if ((i - 1) % 6 === 0) { // stop the loop if 5 films
                     console.log('Reset i due to multiple of 6');
                     break;
-                } else if (i === target) { // stop la boucle si catégorie pas complete (moins de 5 films)
+                } else if (i === target) { // stop loop if category not complete (less than 5 films)
                     console.log('Reset source due to reaching target');
                     resetSource(target, length);
                     break;
@@ -71,7 +71,7 @@ async function mainMovieResquest (data) {
     movieLoop(dataMovies, dataMovies.length)
 
     try {
-        if (data.next) { // verifie si il y a une next page
+        if (data.next) { // check if there is a next page
             const nextPageData = await movieRequest(data.next);
             const dataMoviesNextPage = nextPageData.results;
             console.log("data-movies-next-page: ", dataMoviesNextPage);
@@ -100,7 +100,7 @@ async function fetchInMovie(movie, i) {
             document.getElementById('btn-card-' + i).setAttribute('data-id', data.id);
             if(i >= 19) {
                 const cardInfo = document.getElementById('card-info-' + i); 
-                cardInfo.style.display = 'flex' // retarblir le display flex pour les cards qui ont été display none. Seulement pour le section ou le genre est selectionnable
+                cardInfo.style.display = 'flex' // resets display flex for cards that have been display none. Only for section where gender is selectable
             }
         }
     } catch (error) {
@@ -110,7 +110,7 @@ async function fetchInMovie(movie, i) {
 
 // DropDown Method
 function setDropdown() {
-    document.addEventListener("DOMContentLoaded", async () => { // DOMContentLoaded :  écouteur d'événements qui se déclenche lorsque le HTML initial de la page a été complètement chargé et analysé
+    document.addEventListener("DOMContentLoaded", async () => { // DOMContentLoaded :  event listener that triggers when the page's initial HTML has been fully loaded and parsed
         setDropdownDefaultValue()
         await getCategories()
 
@@ -209,14 +209,14 @@ buttonsModal.forEach((btn) => (btn.addEventListener("click", async() => {
     document.getElementById('modal-description').textContent = dataModal.long_description;
     document.getElementById('modal-actors').textContent = dataModal.actors;
     
-    if (dataModal.rated === "Not rated or unkown rating") { // Verif si on a un PG, sinon on met 0
+    if (dataModal.rated === "Not rated or unkown rating") { // Checks if we have a PG, otherwise we set 0
         document.getElementById('modal-pg-time-contries').textContent = `PG-${0} - ${dataModal.duration} minutes (${dataModal.countries})`;
     } else {
         document.getElementById('modal-pg-time-contries').textContent = `PG-${data.rated} - ${dataModal.duration} minutes (${dataModal.countries})`;
     }
 })))
 
-/* Bouton Voir plus et Voir moins */
+/* See more and See less buttons */
 let voirPlusButton = document.querySelectorAll('.voir-plus-button');
 let voirMoinsButton = document.querySelectorAll('.voir-moins-button');
 
