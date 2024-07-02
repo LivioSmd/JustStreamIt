@@ -133,6 +133,7 @@ p{
 .movie-image{
     height: 340px;
     object-fit: cover;
+    font-size: 0;
 }
 
 .search-dropdown-autres{
@@ -238,6 +239,7 @@ p{
 
 .image-modal {
     width: 250px;
+    font-size: 0;
 }
 
 /* Styles pour les tablettes */
